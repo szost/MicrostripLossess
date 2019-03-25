@@ -25,15 +25,11 @@ function Zchar = Z0(W,h,er,t,f)
             %Hammerstad, E., and O. Jensen, “Accurate Models for Microstrip Computer-Aided Design,”
             %IEEE MTT-S Int. Microwave Symp. Dig., 1980, pp. 407–409.
             %Dispersion
-            eEff_t = epsEff0(W,h,er,t);
-            eEff_f = epsEff0(W,h,er,t);
+            eEff_t = epsEff(W,h,er,t);
+            eEff_f = epsEff(W,h,er,t,f);
             
-            Z0 = Z0m(W,h,er,t);
+            Z01 = Z0(W,h,er,t);
             
-            Zchar = Z0*((eEff_f-1)/(eEff_t-1))*sqrt(eEff_t/eEff_f);         
+            Zchar = Z01*((eEff_f-1)/(eEff_t-1))*sqrt(eEff_t/eEff_f);         
     end
 end
-
-
-
-

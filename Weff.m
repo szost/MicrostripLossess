@@ -2,7 +2,7 @@ function w = Weff(W,h,t,f)
 %WEFF Summary of this function goes here
 %   Detailed explanation goes here
 %
-c (2016)
+%c (2016)
     switch nargin
         case 3
             %We/h Correction for strip thicness -> as a width
