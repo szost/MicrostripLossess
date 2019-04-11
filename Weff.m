@@ -1,4 +1,4 @@
-function w = Weff(W,h,t,f)
+function w = Weff(W,h,t,er,f)
 %WEFF Summary of this function goes here
 %   Detailed explanation goes here
 %
@@ -12,7 +12,7 @@ function w = Weff(W,h,t,f)
                 w = (W/h)+(1.25/pi)*(t/h)*(1+log((2*h)/t));
             end
 
-        case 4
+        case 5
             % Edwards, Terence Charles_ Steer, Michael Bernard -
             % Foundations for microstrip circuit design-John Wiley & Sons
             % Inc 7.7.2
@@ -27,7 +27,7 @@ function w = Weff(W,h,t,f)
             
             fp = physconst('LightSpeed')/(2*w0*sqrt(eEff)); 
             
-            w = W + (w0-W)/(1+(f/fp)^2);           
+            w = (W/h) + (w0-(W/h))/(1+(f/fp)^2);           
     end
 end
 

@@ -1,4 +1,4 @@
-function [unitLengthConLossess,unitLengthDielLossess] = lossess(W,h,er,t,f,tanDel,roCon)
+function [unitLengthConLossess,unitLengthDielLossess] = lossess(W,h,er,t,f,tanDel,roRes)
 %CONLOSSESS Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -14,11 +14,11 @@ function [unitLengthConLossess,unitLengthDielLossess] = lossess(W,h,er,t,f,tanDe
 u0 = 4*pi*10^(-7);
 eps0 = 1/((physconst('LightSpeed'))^2*u0);
 
-We = Weff(W,h,t);
+We = Weff(W,h,t)*h;
 Z0m = Z0(W,h,er,t);
 eEffFreq = epsEff(W,h,er,t,f);
 
-Rs = sqrt(pi*f*u0*roCon); %resistivity
+Rs = sqrt(pi*f*u0*roRes); %resistivity
 sigma = 2*pi*f*eps0*er*tanDel;%conductivity
 
 
